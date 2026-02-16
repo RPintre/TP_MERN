@@ -5,13 +5,13 @@ import { StyleMusical } from "./models/types";
 async function main() {
     const maPlaylist = new Playlist("Mes Favoris 2025");
     try {
-        maPlaylist.jouerAleatoire();
+        console.log("Titre joué aléatoirement :", maPlaylist.jouerAleatoire());
     } catch (error) {
         const message = error instanceof Error ? error.message : String(error);
         console.error("Erreur lors de la lecture aléatoire :", message);
     }
     try {
-        maPlaylist.obtenirTitreParIndex(10);
+        console.log("Titre a l'index 10 :", maPlaylist.obtenirTitreParIndex(10));
     } catch (error) {
         const message = error instanceof Error ? error.message : String(error);
         console.error("Erreur lors de la lecture d'un titre par index :", message);
