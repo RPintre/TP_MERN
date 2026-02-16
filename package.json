@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "ts-node Jour-1/TP-2/index.ts"
+    "start": "ts-node Jour-1/TP-3/src/index.ts"
   },
   "keywords": [],
   "author": "",

@@ -9,7 +9,8 @@
     // See also https://aka.ms/tsconfig/module
     "module": "commonjs",
     "target": "es2020",
-    "types": [],
+    "lib": ["esnext"],
+    "types": ["node"],
     "esModuleInterop": true,
     // "target": "es2020" (pour utiliser les fonctionnalités modernes de JS)
 // // "module": "commonjs"
@@ -40,7 +41,7 @@
     // Recommended Options
     "strict": true,
     "jsx": "react-jsx",
-    "verbatimModuleSyntax": true,
+    "verbatimModuleSyntax": false,
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
