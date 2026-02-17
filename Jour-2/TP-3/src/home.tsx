@@ -1,6 +1,6 @@
 import { useState,useEffect } from 'react'
  const Home = () =>{
-  const init = Number(localStorage.getItem("monCompteur")) ?? 0;
+  const init = Number(localStorage.getItem("monCompteur")) || 0;
   const [count, setCount] = useState(init);
   useEffect(() => {
     console.log("Component mounted");
