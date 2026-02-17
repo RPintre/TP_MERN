@@ -102,7 +102,7 @@ function App() {
                     onClick={() => handleToggleTask(task.id)}
                     className={`btn btn-toggle ${task.isDone ? 'btn-uncheck' : 'btn-check'}`}
                   >
-                    {task.isDone ? '✓ Fait' : '○ Faire'}
+                    {task.isDone ? '✓ Fait' : '○ à Faire'}
                   </button>
                   <button 
                     onClick={() => handleDeleteTask(task.id)}
