@@ -1,16 +1,7 @@
 import { useState,useEffect } from 'react'
  const Home = () =>{
-    const [count, setCount] = useState(0);
-  const [darkmode,setDark]= useState(0);
-  const setDarkMode = () =>{
-    if(darkmode==0){
-      setDark(1);
-
-    }else{
-      setDark(0);
-    }
-  }
-  
+  const init = Number(localStorage.getItem("monCompteur")) ?? 0;
+  const [count, setCount] = useState(init);
   useEffect(() => {
     console.log("Component mounted");
     return () => {
@@ -18,30 +9,8 @@ import { useState,useEffect } from 'react'
     };
   }, []);
   useEffect(() => {
-    const container = document.getElementById("container");
-    const button = document.getElementById("dark-mode_btn");
-    if(darkmode==0){
-      if(container){
-        container.style.backgroundColor="#FFFFFF";
-        container.style.color = "black";
-      }
-      if(button){
-        button.innerText="Dark mode 🌙";
-      }
-    }
-    else{
-      if(container){
-        container.style.backgroundColor="black";
-        container.style.color = "white";
-      }
-      if(button){
-        button.innerText="☀️ mode clair";
-      }
-    }
-  }, [darkmode]);
-  useEffect(() => {
     console.log("Component updated with count:", count);
-    
+    localStorage.setItem('monCompteur', count.toString());
   }, [count]);
   const increment = () => {
     setCount(count => count + 1);
@@ -52,7 +21,17 @@ import { useState,useEffect } from 'react'
   const reset = () => {
     setCount(0);
   }
-  
+  const [darkmode,setDark]= useState(0);
+  const setDarkMode = () =>{
+    if(darkmode==0){
+      setDark(1);
+    }else{
+      setDark(0);
+    }
+  } 
+  useEffect(() => {
+    
+  }, [darkmode]);
   const prenom = "Romain";
   return (
   <div

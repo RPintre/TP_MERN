@@ -1,9 +1,9 @@
 import Home from './home.tsx'
+import Library from './library.tsx'
 import { Routes, Route, Link } from 'react-router-dom';
 
 
 
-const Library = () => <h2>Ma Bibliothèque</h2>;
 
 function App() {
   
