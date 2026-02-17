@@ -7,7 +7,7 @@
 // ○ Un bouton "Check/Uncheck".
 // ○ Un bouton "Supprimer".
 import './App.css';
-import { useEffect, useState } from 'react';
+import React,{ useEffect, useState } from 'react';
 import { createTask, deleteTask, getAllTasks, toggleTask } from './services/api';
 
 interface Task {
@@ -32,7 +32,7 @@ function App() {
     fetchTasks();
   }, []);
 
-  const handleAddTask = async (e: React.FormEvent) => {
+  const handleAddTask = async (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!newTaskLabel.trim()) return;
 
