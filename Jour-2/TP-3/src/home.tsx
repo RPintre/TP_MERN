@@ -1,7 +1,7 @@
 import { useState,useEffect } from 'react'
  const Home = () =>{
-  const init = Number(localStorage.getItem("monCompteur")) || 0;
-  const [count, setCount] = useState(init);
+  const initCompteur = Number(localStorage.getItem("monCompteur")) || 0;
+  const [count, setCount] = useState(initCompteur);
   useEffect(() => {
     console.log("Component mounted");
     return () => {
