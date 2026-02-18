@@ -1,0 +1,32 @@
+TP : Architecture des Données (Schema
+& Model)
+Objectif
+Définir la structure des données "Cinéma" en utilisant Mongoose et le typage fort de
+TypeScript.
+Fichier à créer
+src/models/movie.model.ts
+Instructions
+1. Imports
+Dans le fichier, importez mongoose, Schema et Document depuis le paquet mongoose.
+2. Interface TypeScript
+Définissez une interface nommée IMovie qui étend Document. Cette interface servira à
+typer vos objets dans le code. Elle doit contenir les propriétés suivantes :
+○ title : type string
+○ director : type string
+○ year : type number
+○ genre : type string
+○ duration : type number
+3. Schéma Mongoose
+Créez une constante MovieSchema en instanciant new Schema(). Définissez la structure
+de la base de données pour correspondre à l'interface :
+○ Tous les champs (title, director, year, genre, duration) doivent être de leur type
+respectif (String ou Number) et être obligatoires (required: true).
+○ Ajoutez un deuxième argument au constructeur du Schema pour activer les
+horodatages automatiques : { timestamps: true }.
+4. Export du Modèle
+Exportez le modèle par défaut en l'associant à l'interface.
+Syntaxe attendue : export default mongoose.model<IMovie>('Movie', MovieSchema);
+Critères de validation
+● Le code compile sans erreur TypeScript.
+● L'interface IMovie possède bien les 5 champs demandés.
+● Le Schema force la présence des données (required).
